@@ -29,7 +29,7 @@ Clippy has been replaced with the BRAND NEW myBUDDY OS. He's a helpful computer 
     - 128 Viruses Cleaned
     - 128 Worms Cleaned
     - 128 Spam Emails Stopped
-    - 128 Malware Remoed
+    - 128 Malware Removed
     - 128 Hackers Thwarted
     - 128 Tracking Cookies Removed
     - 128 Crypto Miners Repurposed
@@ -40,10 +40,10 @@ Clippy has been replaced with the BRAND NEW myBUDDY OS. He's a helpful computer 
 ## TODO List
 - [ ] Game flow/layout (menus/options/controls/etc)
 - [ ] Do we want cutscenes for collecting a new power-up?
-- [ ] Do we want bosses?
+- [x] Do we want bosses? (No. this is just a Tamagotchi)
 - [ ] Flesh out enemy types (What do they do? What are their attacks/special powers?)
 - [ ] Flesh out power-ups (What do they do? What do they look like? Do they add to the overall power of myBUDDY or are they ephemeral?)
-- [x] Art and animations for myBUDDY (IDLE/WALK/THINK/ATTACK)
+- [x] Art and animations for myBUDDY (IDLE/WALK/THINK)
 - [ ] Art and animations for each enemy and power-up
 - [ ] Art for Achievements
 - [ ] Sound effects for myBUDDY
@@ -63,10 +63,13 @@ TODO: Describe the installation process (Windows/Mac/Linux)
 5. Submit a pull request
 
 ## History
-**v0.0.1** - Initial build with the features above
+**v0.1.0** - Initial build
+**v0.1.1** - Added Virus enemy, Anti Virus powerup, Achievement framework, basic GUI
 
 ## Credits
 - Huge shout-out to the members of [DC423](https://www.dc423.org/) for their help in coming up with enemies and power-ups
+- Elthen's Pixel Art Shop - https://elthen.itch.io/ (Portal animations)
+- Craftron Gaming - https://www.dafont.com/craftron-gaming.d6128 (Pixel font)
 
 ## License
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)

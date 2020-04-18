@@ -1,13 +1,92 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/MyBuddy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/World.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/EnemySpawner.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Walls.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Resources/PixelFont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Scenes/PowerUpSpawner.tscn" type="PackedScene" id=6]
 
-[node name="World" type="Area2D"]
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 184 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 328, 10 )
+
+[node name="World" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="MyBuddy" parent="." instance=ExtResource( 1 )]
-position = Vector2( 24, 312 )
+position = Vector2( 320, 304 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 0, 0, 0, 360, 640, 360, 640, 0, 704, 0, 704, 424, -64, 424, -64, 0 )
+[node name="EnemySpawner" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, 64 )
+
+[node name="PowerUpSpawner" parent="." instance=ExtResource( 6 )]
+position = Vector2( 0, 64 )
+
+[node name="LeftWall" parent="." instance=ExtResource( 4 )]
+position = Vector2( 8, 152 )
+
+[node name="CollisionShape2D" parent="LeftWall" index="0"]
+position = Vector2( 0, 32 )
+shape = SubResource( 2 )
+
+[node name="RightWall" parent="." instance=ExtResource( 4 )]
+position = Vector2( 632, 152 )
+
+[node name="CollisionShape2D" parent="RightWall" index="0"]
+position = Vector2( 0, 32 )
+shape = SubResource( 2 )
+
+[node name="BottomWall" parent="." instance=ExtResource( 4 )]
+position = Vector2( 320, 360 )
+
+[node name="CollisionShape2D" parent="BottomWall" index="0"]
+shape = SubResource( 1 )
+
+[node name="TopWall" parent="." instance=ExtResource( 4 )]
+position = Vector2( 320, 32 )
+
+[node name="CollisionShape2D" parent="TopWall" index="0"]
+shape = SubResource( 1 )
+
+[node name="StatsContainer" type="CenterContainer" parent="."]
+margin_left = 536.0
+margin_top = 216.0
+margin_right = 624.0
+margin_bottom = 344.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatsContainer"]
+margin_left = 7.0
+margin_top = 48.0
+margin_right = 81.0
+margin_bottom = 80.0
+
+[node name="HealthLabel" type="Label" parent="StatsContainer/VBoxContainer"]
+margin_right = 74.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Health: 0"
+
+[node name="AVMultiplierLabel" type="Label" parent="StatsContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 74.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "AV Multi: 1"
+
+[editable path="LeftWall"]
+
+[editable path="RightWall"]
+
+[editable path="BottomWall"]
+
+[editable path="TopWall"]

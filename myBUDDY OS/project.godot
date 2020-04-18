@@ -19,6 +19,12 @@ config/name="myBUDDY OS"
 run/main_scene="res://Scenes/World.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+EventBus="*res://Scripts/EventBus.gd"
+PlayerStats="*res://Scenes/PlayerStats.tscn"
+SaveAndLoad="*res://Scripts/SaveAndLoad.gd"
+
 [display]
 
 window/size/width=640
@@ -54,6 +60,21 @@ texture={
 "stream": false,
 "svg/scale": 1.0
 }
+
+[input]
+
+attack={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Buddy"
+2d_physics/layer_3="Enemy"
+2d_physics/layer_4="PowerUps"
 
 [rendering]
 
