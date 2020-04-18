@@ -53,7 +53,7 @@ Clippy has been replaced with the BRAND NEW myBUDDY OS. He's a helpful computer 
 
 ## Installation
 TODO: Describe the installation process (Windows/Mac/Linux)
-
+- This will probably be a ZIP file with an executable inside.
 
 ## Contributing
 1. Fork it, please.
