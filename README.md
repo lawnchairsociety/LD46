@@ -43,7 +43,7 @@ Clippy has been replaced with the BRAND NEW myBUDDY OS. He's a helpful computer 
 - [ ] Do we want bosses?
 - [ ] Flesh out enemy types (What do they do? What are their attacks/special powers?)
 - [ ] Flesh out power-ups (What do they do? What do they look like? Do they add to the overall power of myBUDDY or are they ephemeral?)
-- [ ] Art and animations for myBUDDY
+- [x] Art and animations for myBUDDY (IDLE/WALK/THINK/ATTACK)
 - [ ] Art and animations for each enemy and power-up
 - [ ] Art for Achievements
 - [ ] Sound effects for myBUDDY
