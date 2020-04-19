@@ -1,7 +1,14 @@
 extends Node2D
 
 const PORTAL = preload("res://Scenes/EnemyPortal.tscn")
-const ENEMY = preload("res://Scenes/Virus.tscn")
+const VIRUS = preload("res://Scenes/Virus.tscn")
+const CRYPTO_MINER = preload("res://Scenes/CryptoMiner.tscn")
+const MALWARE = preload("res://Scenes/Malware.tscn")
+const SPAM = preload("res://Scenes/Spam.tscn")
+const WORM = preload("res://Scenes/Worm.tscn")
+const HACKER = preload("res://Scenes/Hacker.tscn")
+
+var ENEMIES
 
 onready var spawnPoints = $SpawnPoints
 
@@ -9,6 +16,7 @@ var spawn_position = Vector2.ZERO
 var stats = PlayerStats
 
 func _ready():
+	ENEMIES = [VIRUS, CRYPTO_MINER, MALWARE, SPAM, WORM, HACKER]
 	EventBus.connect("enemy_portal_open_complete", self, "spawn_enemy")
 
 
@@ -27,7 +35,8 @@ func spawn_portal():
 	
 		
 func spawn_enemy():
-	var enemy = ENEMY.instance()
+	ENEMIES.shuffle()
+	var enemy = ENEMIES[0].instance()
 	var main = get_tree().current_scene
 	main.add_child(enemy)
 	enemy.global_position = spawn_position

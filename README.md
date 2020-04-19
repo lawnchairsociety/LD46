@@ -17,15 +17,15 @@ Clippy has been replaced with the BRAND NEW myBUDDY OS. He's a helpful computer 
     - ~~Compliance Checks~~
 3. Power ups
     - Warranties (increases max health and refills health)
-    - CPU upgrades
+    - CPU upgrades (Increase attacks against Worms)
     - ~~Cloud servers~~
-    - RAM upgrades
-    - Anti-virus
-    - Email filters
-    - AI
-    - Tensor cores
+    - RAM upgrades (Increase attacks against Malware)
+    - Anti-virus (Increase attacks against Viruses)
+    - Email filters (Increase attacks against Spam)
+    - AI (Increase attacks against Crypto Miners)
+    - Firewalls (Increase attacks against Hackers)
 4. Win/Loss scenarios
-    - There is no winning state in this game. myBUDDY is strictly a digital pet that you have to protect. Losing is basically just letting myBUDDY die. If myBuddy dies, you will be given a menu to create a new myBUDDY and the game starts over.
+    - There is no winning state in this game. myBUDDY is strictly a digital pet that you have to protect. Losing is basically just letting myBUDDY die. If myBuddy dies, you have to quit. Also, your save data is wiped out. :smile:
 5. Achievements (if time allows) [Ideas for names?]
     - Health over 9000 ("OVER NINE THOUSAND!!1!")
     - 1 Virus Cleaned
@@ -52,17 +52,29 @@ Clippy has been replaced with the BRAND NEW myBUDDY OS. He's a helpful computer 
 - [x] Flesh out enemy types (What do they do? What are their attacks/special powers?)
 - [x] Flesh out power-ups (What do they do? What do they look like? Do they add to the overall power of myBUDDY or are they ephemeral?)
 - [x] Art and animations for myBUDDY (IDLE/WALK/THINK)
-- [ ] Art and animations for each enemy
-- [ ] Art and animations for each power-up
+- [x] Art and animations for each enemy
+- [x] Art and animations for each power-up
 - [x] Art for Achievements (No art...just an Achievements window from the menu with the list of ones collected... "???" for any not collected)
-- [ ] Sound effects for myBUDDY
-- [ ] Sound effects for enemy
-- [ ] Sound effects for power-ups
+- [x] Sound effects for myBUDDY
+- [x] Sound effects for enemy
+- [x] Sound effects for power-ups
 - [x] Sound effects for achievements (No)
 
 ## Installation
 TODO: Describe the installation process (Windows/Mac/Linux)
-- This will probably be a ZIP file with an executable inside.
+- Windows:
+    1. Download 'myBUDDYOS-Win64.exe'
+    2. Double-click the executable to start playing
+- Mac
+    1. Download 'myBUDDYOS-OSX.zip'
+    2. Unzip file
+    3. Double-click on the game (I don't have a Mac to test this with)
+- Linux:
+    1. Download 'myBUDDYOS.x86_64'
+    2. Double-click the executable to start playing
+
+## Issues
+1. On the Mac that tested this game, there was a black rectangle on the background. This is due to graphics card firmware issues with per-pixel transparency.
 
 ## Contributing
 1. Fork it, please.
@@ -75,11 +87,13 @@ TODO: Describe the installation process (Windows/Mac/Linux)
 **v0.1.0** - Initial build
 **v0.1.1** - Added Virus enemy, Anti Virus powerup, Achievement framework, basic GUI
 **v0.1.2** - Added save states and acheievements. Also added menu.
+**v0.1.3** - Initial feature-complete game finished
 
 ## Credits
 - Huge shout-out to the members of [DC423](https://www.dc423.org/) for their help in coming up with enemies and power-ups
 - Elthen's Pixel Art Shop - https://elthen.itch.io/ (Portal animations)
 - Craftron Gaming - https://www.dafont.com/craftron-gaming.d6128 (Pixel font)
+- Monster Friend - https://www.dafont.com/monster-friend.d8363 (Splash Font)
 
 ## License
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)

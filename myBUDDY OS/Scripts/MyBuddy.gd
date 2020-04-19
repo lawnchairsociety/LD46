@@ -24,11 +24,12 @@ var stateTimer
 onready var animationPlayer = $AnimationPlayer
 onready var sprite = $Sprite
 onready var WINDOWSIZE = get_viewport_rect().size
+onready var soundPlayer = $BuddyHitSoundPlayer
 
 
 func _ready():
 	randomize()
-	stats.connect("no_health", self, "queue_free")
+	stats.connect("no_health", self, "clean_up")
 	stateTimer = get_tree().create_timer(5)
 
 
@@ -80,6 +81,12 @@ func check_out_of_bounds():
 		return true
 	return false
 
+
+func clean_up():
+	get_tree().change_scene("res://Scenes/SplashScreen.tscn")
+	queue_free()
+
+
 func _on_Hitbox_area_entered(area):
 	if collision:
 		var motion = collision.remainder.bounce(collision.normal)
@@ -91,3 +98,4 @@ func _on_Hitbox_body_entered(body):
 	var main = get_tree().current_scene
 	stats.health -= 1
 	knockback = (Vector2(WINDOWSIZE.x / 2, WINDOWSIZE.y / 2) - global_position).normalized() * 125
+	soundPlayer.play()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Resources/Virus.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Virus.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/BuddyDetectionZone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/EnemyHitSoundPlayer.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 24 )
@@ -80,7 +81,11 @@ position = Vector2( 0, -24 )
 [node name="CollisionShape2D" parent="BuddyDetectionZone" index="0"]
 modulate = Color( 1, 1, 1, 0.294118 )
 shape = SubResource( 5 )
+
+[node name="EnemyHitSoundPlayer" parent="." instance=ExtResource( 4 )]
 [connection signal="input_event" from="." to="." method="_on_Virus_input_event"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
+[connection signal="finished" from="EnemyHitSoundPlayer" to="." method="_on_EnemyHitSoundPlayer_finished"]
 
 [editable path="BuddyDetectionZone"]

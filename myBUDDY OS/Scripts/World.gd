@@ -10,7 +10,7 @@ onready var ramValueLabel = $StatsBackground/StatsContainer/VBoxContainer/StatsV
 onready var avValueLabel = $StatsBackground/StatsContainer/VBoxContainer/StatsVBoxContainer/StatsHBoxContainer/ValueContainer/AVValueLabel
 onready var emailFilterValueLabel = $StatsBackground/StatsContainer/VBoxContainer/StatsVBoxContainer/StatsHBoxContainer/ValueContainer/EmailFilterValueLabel
 onready var aiValueLabel = $StatsBackground/StatsContainer/VBoxContainer/StatsVBoxContainer/StatsHBoxContainer/ValueContainer/AIValueLabel
-onready var tensorCoreValueLabel = $StatsBackground/StatsContainer/VBoxContainer/StatsVBoxContainer/StatsHBoxContainer/ValueContainer/TensorCoreValueLabel
+onready var firewallValueLabel = $StatsBackground/StatsContainer/VBoxContainer/StatsVBoxContainer/StatsHBoxContainer/ValueContainer/FirewallValueLabel
 
 onready var virusValueLabel = $StatsBackground/StatsContainer/VBoxContainer/EnemyVBoxContainer/EnemyHBoxContainer/ValueContainer/VirusValueLabel
 onready var wormValueLabel = $StatsBackground/StatsContainer/VBoxContainer/EnemyVBoxContainer/EnemyHBoxContainer/ValueContainer/WormValueLabel
@@ -22,7 +22,7 @@ onready var cryptoMinerValueLabel = $StatsBackground/StatsContainer/VBoxContaine
 func _ready():
 	get_tree().get_root().set_transparent_background(true)
 	update_save_data()
-	
+	SaveAndLoad.save_data_to_file(stats.save_data)
 
 func _process(delta):
 	update_all_labels()
@@ -39,7 +39,7 @@ func update_all_labels():
 	update_av_label()
 	update_email_filter_label()
 	update_ai_label()
-	update_tensor_core_label()
+	update_firewall_label()
 	update_virus_label()
 	update_worm_label()
 	update_spam_label()
@@ -72,8 +72,8 @@ func update_ai_label():
 	aiValueLabel.text = str(stats.ai_multiplier)
 
 
-func update_tensor_core_label():
-	tensorCoreValueLabel.text = str(stats.tensor_core_multiplier)
+func update_firewall_label():
+	firewallValueLabel.text = str(stats.firewall_multiplier)
 
 
 func update_virus_label():

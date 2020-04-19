@@ -10,6 +10,7 @@ func _ready():
 	pass
 
 func _on_QuitButton_pressed():
+	stats.save_all_data()
 	get_tree().quit()
 
 

@@ -16,7 +16,8 @@ _global_script_class_icons={
 [application]
 
 config/name="myBUDDY OS"
-run/main_scene="res://Scenes/World.tscn"
+run/main_scene="res://Scenes/SplashScreen.tscn"
+boot_splash/image="res://SplashScreen.png"
 config/icon="res://icon.png"
 
 [autoload]
