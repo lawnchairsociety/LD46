@@ -90,4 +90,4 @@ func _on_Hitbox_area_entered(area):
 func _on_Hitbox_body_entered(body):
 	var main = get_tree().current_scene
 	stats.health -= 1
-	knockback = body.knockback_vector * 125
+	knockback = (Vector2(WINDOWSIZE.x / 2, WINDOWSIZE.y / 2) - global_position).normalized() * 125

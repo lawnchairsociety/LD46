@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Themes/Button9Slice.tres" type="StyleBox" id=1]
+[ext_resource path="res://Themes/Button9SlicePressed.tres" type="StyleBox" id=2]
+[ext_resource path="res://Themes/Button9SliceHover.tres" type="StyleBox" id=3]
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=4]
+[ext_resource path="res://Resources/PixelFont.tres" type="DynamicFont" id=5]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 264.0
+margin_top = 136.0
+margin_right = 377.0
+margin_bottom = 228.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 113.0
+margin_bottom = 92.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContinueButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_right = 113.0
+margin_bottom = 20.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Continue"
+
+[node name="AchievementsButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 113.0
+margin_bottom = 44.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Achievements"
+
+[node name="SaveButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 48.0
+margin_right = 113.0
+margin_bottom = 68.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Save"
+
+[node name="QuitButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 72.0
+margin_right = 113.0
+margin_bottom = 92.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Quit"
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/AchievementsButton" to="." method="_on_AchievementsButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/SaveButton" to="." method="_on_SaveButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

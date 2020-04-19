@@ -9,7 +9,6 @@ export(int) var health = 3
 
 var velocity = Vector2.ZERO
 var direction = Vector2.LEFT
-var knockback_vector = direction * -1
 var collision
 var stats = PlayerStats
 
@@ -34,7 +33,6 @@ func _ready():
 
 
 func _physics_process(delta):
-	knockback_vector = direction
 	match state:
 		enemyStates.IDLE:
 			animationPlayer.play("Idle")
@@ -99,7 +97,7 @@ func _on_Virus_input_event(viewport, event, shape_idx):
 		if event.is_pressed():
 			health -= stats.base_attack * stats.antivirus_multiplier
 			if health <= 0:
-				stats.set_virus_cleaned(stats.virus_cleaned + 1)
+				stats.set_virus_cleaned(stats.viruses_cleaned + 1)
 				stats.enemies_on_screen -= 1
 				queue_free()
 
